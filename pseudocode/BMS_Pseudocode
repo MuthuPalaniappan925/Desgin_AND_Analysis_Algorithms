@@ -1,0 +1,21 @@
+British Museum Search Pseudocode
+
+function BMS(graph[][],start_node)
+
+  results = []
+  start = start_node
+  
+  queue = new Queue()
+  queue.enqueue(start)
+  
+  visited = new Set()
+  visited.add(start)
+  
+  While queue is not empty
+    node = queue.dequeue()
+    for each neighbour in node.neighbours
+      if neighbour is not in visited
+        queue.enqueue(neighbour)
+        visited.add(neighbour)
+        
+   return result
