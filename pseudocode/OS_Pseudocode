@@ -1,0 +1,18 @@
+Oracle Search Pseudocode
+
+ORACLE_SEARCH(graph, start_node, goal_node):
+  frontier = [start_node] # initialize the frontier with the start node
+  explored = set() # initialize an empty set for the explored nodes
+  
+  while frontier is not empty:
+    current_node = frontier.pop() # remove the node from the frontier and mark it as explored
+    explored.add(current_node)
+    
+    if current_node == goal_node: # goal test, return if the current node is the goal
+      return True
+    
+    for neighbor in graph.neighbors(current_node): # expand the frontier with the neighbors of the current node
+      if neighbor not in explored and neighbor not in frontier:
+        frontier.append(neighbor)
+        
+  return False # return False if goal node not found
