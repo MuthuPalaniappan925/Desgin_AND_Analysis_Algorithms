@@ -1,0 +1,18 @@
+Depth-First-Search Pseudocode
+
+Function DFS (Graph,Vertex)
+  
+  create a stack S
+  mark Vertex as visited
+  push Vertex to S
+  
+  While S is not empty:
+    t = pop from S
+    for all edges e in G incident on t:
+      if all other endpoint of e is not visited:
+        mark the other endpoint of e is visited
+        push the other endpoint of e to S
+        
+  display stack S
+  
+  
