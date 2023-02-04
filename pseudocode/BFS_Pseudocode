@@ -1,0 +1,16 @@
+Breadth First Search Pseudocode
+
+Function BFS (graph,start_vertex)
+  
+  create a empty queue and enqueue the start_vertex
+  create a set of visted vertex and add the start_vertex
+  
+  while queue is not empty:
+    
+    dequeue a vertex from the queue and asign as current_vertex
+    for each neighbours in current_vertex:
+      if the neighbours not in the visited vertex:
+        add the neighbour to the visited vertex
+        enqueue the neighbour to the queue
+        
+   return the set of visited vertex
