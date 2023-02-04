@@ -1,0 +1,29 @@
+A* Pseudocode
+
+Start with a graph and a starting node
+
+Set the cost of the starting node to 0 and add it to the open list
+While the open list is not empty, do the following:
+
+Function A_* (graph,start_node)
+
+  #Create an open list to keep track of the nodes that need to be evaluated
+  #Create a closed list to keep track of the nodes that have already been evaluated
+  open_list = list()
+  closed_list = list()
+  
+  cost of the start_node = 0
+  open_list.add(start_node)
+  
+  while open_list!=empty:
+    a. Find the node with the lowest cost in the open list
+    b. Remove it from the open list and add it to the closed list
+    c. For each neighbor of the current node:
+      i. If the neighbor is in the closed list, skip it
+      ii. If the neighbor is not in the open list, add it with its estimated cost
+      iii. If the neighbor is already in the open list, update its cost if it's lower than the current cost
+      Continue this process until the goal node is found or there are no more nodes to evaluate
+      
+      
+If the goal node is found, return the path from the starting node to the goal node
+If there are no more nodes to evaluate, return "No path found".
