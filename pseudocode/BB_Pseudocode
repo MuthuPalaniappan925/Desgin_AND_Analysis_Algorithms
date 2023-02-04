@@ -1,0 +1,37 @@
+Branch and Bound Pseudocode
+
+function branchAndBound(graph, start, end):
+    # initialize a priority queue to keep track of vertices to visit
+    queue = PriorityQueue()
+
+    # add the start vertex to the queue with a lower bound of 0
+    queue.add(start, 0)
+
+    # initialize best solution as infinity
+    bestSolution = infinity
+
+    # loop until queue is empty
+    while queue is not empty:
+        # remove the vertex with the lowest lower bound from the queue
+        currentVertex = queue.removeMin()
+
+        # if the current vertex is the end vertex, update best solution
+        if currentVertex is end:
+            bestSolution = currentVertex.lowerBound
+            continue
+
+        # loop over the neighbors of the current vertex
+        for neighbor in currentVertex.neighbors:
+            # calculate the lower bound of the neighbor
+            lowerBound = currentVertex.lowerBound + cost(currentVertex, neighbor)
+
+            # if the lower bound is greater than the best solution, skip this neighbor
+            if lowerBound >= bestSolution:
+                continue
+
+            # update the lower bound of the neighbor and add it to the queue
+            neighbor.lowerBound = lowerBound
+            queue.add(neighbor, lowerBound)
+
+    # return the best solution
+    return bestSolution
