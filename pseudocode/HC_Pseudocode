@@ -1,0 +1,21 @@
+Hill Climbing (HC) Pseudocode
+
+function hill_climbing(graph, start_node):
+    current_node = start_node
+    while True:
+        neighbors = get_neighbors(current_node)
+        if not neighbors: #no better solution found
+            return current_node
+        next_node = get_best_neighbor(neighbors)
+        if get_value(next_node) >= get_value(current_node)
+            return current_node
+        current_node = next_node
+
+function get_neighbors(node):
+    return list of nodes connected to node
+
+function get_best_neighbor(neighbors):
+    return node with the lowest cost to reach goal
+
+function get_value(node):
+    return value associated with node
