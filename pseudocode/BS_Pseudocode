@@ -1,0 +1,27 @@
+Beam Search Pseudocode
+
+Function BS (graph,start,end,beam_width)
+  
+  current = start
+  create a beam list
+  create a visited list
+  
+  append current to the visited list
+  
+  while current != end:
+    for all neighbours in current node:
+      if neighbour not in visited:
+        add neighbour to the beam list
+        
+    Sort the beam list based on the cost of reaching each node 
+    Keep only the top beam width number of nodes in the beam list
+    
+    set current = beam.pop(0)
+    
+    append current to the visited list
+    
+    if not beam:
+      return "No Solution Found"
+      
+    
+  return visited
